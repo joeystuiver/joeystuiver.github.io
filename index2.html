@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Otawanta</title>
+          <!-- Include the EmailJS CDN -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <link rel="stylesheet" href="styles2.css">
+    </head>
+<body>
+
+    <nav>
+            <img src="Content/Images/Logoshadow.png" alt="Logo" class="logo" onclick="redirectToPage()">
+            <a href="https://www.youtube.com/@otawanta7456" class="scroll-button"><img src="Content/Images/Youtube.png" width="50vw"></a>
+            <a href="https://www.instagram.com/otawanta/" class="scroll-button"><img src="Content/Images/Insta.png" width="50vw"></a>
+            <a href="#discography-grid" class="scroll-button">Discography</a>
+            <a href="#about-me" class="scroll-button">About</a>
+            <a href="#contact-form">Contact / Booking</a>
+    </nav>
+
+    <header id="header">
+
+ <div class="centered-text">
+            <h1>OTAWANTA</h1>
+        </div>
+        <div class="background-layer" id="bg1"></div>
+        <div class="background-layer" id="bg2"></div>
+
+    </header>
+
+    <!--div class="floating-bar"></div-->
+
+    <main id="main">
+
+    <section id="Discography">
+
+        <h2>Discography</h2>
+        
+        <h3>House</h3>
+
+        <section id="discography-grid" class="grid-container">
+            <div class="grid-item">
+                <a href="https://open.spotify.com/album/6uS477inoHkKtds3hySewq?si=w1XJ3eJ1TouBgsbjDYgZog" target="_blank">
+                    <img src="Content/Images/deepcuts.jpg" alt="Album 1">
+                </a>
+                <p>Deep Cuts EP</p>
+            </div>
+            <div class="grid-item">
+                <a href="https://open.spotify.com/track/3oTFiP4EXDy6ggpI2mHJFf?si=8b155ce3cb1942ff" target="_blank">
+                <img src="Content/Images/hearthehorn.jpg" alt="Album 2">
+                </a>
+                <p>Hear the Horn</p>
+            </div>
+            <div class="grid-item">
+                <a href="https://open.spotify.com/track/1DO0xpmnaUwIHrGzXecLFC?si=34489d4e3d894e02" target="_blank">
+                <img src="Content/Images/artemis.jpg" alt="Album 3">
+                </a>
+                <p>Artemis</p>
+            </div>
+        </section>
+
+        <h3>Techno</h3>
+        <section id="discography-grid" class="grid-container">
+            <div class="grid-item">
+                <a href="https://open.spotify.com/track/19T5VfdcapEPPkQFIN0CBt?si=afa088dbb42a4448" target="_blank">
+                <img src="Content/Images/syntra.jpg" alt="Album 4">
+                </a>
+                <p>Syntra</p>
+            </div>
+            <div class="grid-item">
+                <a href="https://open.spotify.com/album/6QMeEIee8et8iJ5ofldNS3?si=Rcdpb7CrQ52Y2ZtXw5jffw" target="_blank">
+                <img src="Content/Images/pump.jpg" alt="Album 5">
+                </a>
+                <p>Pump EP</p>
+            </div>
+            <div class="grid-item">
+                <a href="https://open.spotify.com/track/5S8opkYTnQ85oB5p3K3MPd?si=ab213a4972bf4bb0" target="_blank">
+                <img src="Content/Images/nightmare.jpg" alt="Album 6">
+                </a>
+                <p>Nightmare</p>
+            <!-- Add more items as needed -->
+
+        </section>
+    </section>
+
+    <section class="layout-section", id="about-me">
+        <div class="container">
+            <div class="text-section"><h4>Hailing from Maastricht in the Netherlands, Otawanta has been immersed in house music since childhood. Inspired by legends like St. Germain and Todd Terry, Otawanta developed an early appreciation for the genre. Over the course of life, Otawanta picked up an appreciation for Tech-house and Techno. With a strong foundation in traditional house, Otawanta has carved out a unique niche in the modern scene, blending groovy, jazzy Tech-house house with a love for the classics. Recently, Otawanta has begun experimenting with the vibrant sounds of Breakbeat and UK Garage, adding another dynamic layer to the repertoire. Passionate and innovative, Otawanta is redefining the dance music landscape, one track at a time.</h4></div>
+                <!-- Alternating Video Section -->
+                <div class="image-section top-image" style="position: relative; width: 100%; height: 100%; overflow: hidden;">
+                    <video id="video1" autoplay muted loop playsinline style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: opacity 1s;" class="visible">
+                        <source src="Content/GIFs/1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video id="video2" autoplay muted loop playsinline style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: opacity 1s; opacity: 0;" class="hidden">
+                        <source src="Content/GIFs/2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            <div class="widget-section"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5pPyKfYrZazFK0mMsWtB8Q?utm_source=generator&theme=0" width="70%" height="800" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+            <div class="image-section bottom-image"><img src="Content/Images/image6.jpeg" alt="About Me Image 1"></div>
+        </div>
+    </section>
+
+        <section class="contact-form">
+
+        <form id="contact-form">
+            <h5>Contact / Booking form</h5>
+            <label for="name">Your name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Your email adress:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+            
+            <button type="submit">Send Message</button>
+        </form>
+
+    </section>
+
+<footer>
+        &copy; 2024 Otawanta
+</footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
