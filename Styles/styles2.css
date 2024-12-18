@@ -186,7 +186,7 @@ nav {
     text-align: right;
     background: linear-gradient(to bottom rgba(0, 0, 0, 0.842) rgba(0, 0, 0, 0.322)); /* Semi-transparent background */
     backdrop-filter: blur(10px); /* Blur effect */
-    z-index: 2; /* Ensures the nav stays above header content */
+    z-index: 10; /* Ensures the nav stays above header content */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
     display: flex; /* Enable flexbox */
 }
@@ -243,7 +243,7 @@ main {
 
 #Discography {
     padding: 20px;
-    background-image: url('Content/Images/backgroundblur.png');
+    background-image: url("Content/Images/backgroundblur.png");
     background-size: 150%;
     background-position: center;
 }
