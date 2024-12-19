@@ -15,7 +15,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
-    width:auto;
 }
 
 /* Header */
@@ -24,7 +23,6 @@ header {
     height: 100vh; /* Adjust the height to your preference */
     text-align: center;
     overflow: hidden;
-    width:auto;
 }
 
 .centered-text {
@@ -178,11 +176,11 @@ nav {
     align-self:baseline;
     position: fixed; /* Makes the navbar fixed at the top of the page */
     justify-content: center;
-    top: 20px;
+    top: 2%;
     left: 0px;
     right: 0px;
     width: 100vw;
-    padding: 0px;
+    padding: 0.2% 0.2%;
     text-align: right;
     background: linear-gradient(to bottom rgba(0, 0, 0, 0.842) rgba(0, 0, 0, 0.322)); /* Semi-transparent background */
     backdrop-filter: blur(10px); /* Blur effect */
@@ -194,12 +192,12 @@ nav {
 
 /* Navigation Links */
 nav a {
-    margin: 30px 30px;
+    margin: 1% 1%;
     text-decoration: none; /* Remove underline */
     color: #ffffff;
     font-family: impact;
     font-size: 24px;
-    padding: 20px;
+    padding: 1%;
     border-radius: 5px;
     background-color: #0000002f;
     transition: background-color 0.3s; /* Smooth transition */
@@ -218,31 +216,13 @@ nav a:hover {
     z-index: 0;
 }
 
-.floating-bar {
-    position: absolute;
-    top: 920px;
-    left: 0;
-    height: 150px;
-    width: 100%; /* Span the entire width of the viewport */
-    background: 
-        linear-gradient(to bottom, #00000000, #121813f8 50%), /* Top to middle gradient */
-        linear-gradient(to bottom, #121813f8, #00000000 50%); /* Middle to bottom gradient */
-    background-size: 100% 50%; /* Each gradient covers 50% of the height */
-    background-position: top, bottom; /* Position the first gradient at the top and the second at the bottom */
-    background-repeat: no-repeat; /* Prevent the gradients from repeating */
-    padding: 10px 20px; /* Padding for some space inside the bar */
-    text-align: center; /* Center the text */
-    z-index: 1000; /* High z-index to ensure it floats above all other content */
-}
-
 main {
     flex: 1;
     height: 100%;
-    width: auto;
 }
 
 #Discography {
-    padding: 20px;
+    padding: 1%;
     background-image: url("Content/Images/backgroundblur.png");
     background-size: 150%;
     background-position: center;
@@ -269,8 +249,8 @@ p {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
+    gap: 1%;
+    padding: 1%;
 }
 
 .grid-item {
@@ -282,7 +262,6 @@ p {
 
 .grid-item img {
     max-width: 100%;
-    height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -305,7 +284,6 @@ p {
     grid-template-rows: 1fr 1fr;   /* Two rows in total */
     width: 100%; /* Full width of the section */
     height: auto; /* Fixed height for example, can be adjusted */
-    background-color: lightcyan;
 }
 
 /* Left column */
@@ -371,12 +349,35 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     nav {
-        font-size: 14px;
+        flex-direction: column;
     }
 
-    footer {
-        font-size: 12px;
+    nav a {
+        margin: 5px 0;
+    }
+
+    .centered-text {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-form {
+        padding: 10px;
+    }
+
+    input, textarea {
+        width: 100%;
     }
 }
