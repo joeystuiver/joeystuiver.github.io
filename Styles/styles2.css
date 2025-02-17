@@ -300,7 +300,7 @@ p {
 }
 
 .widget-section {
-    background-image: url("Content/Images/textbackground3.png");
+    background-image: url("Content/Images/transparent.png");
     background-size: cover;
     background-position: bottom left;
     grid-column: 1;

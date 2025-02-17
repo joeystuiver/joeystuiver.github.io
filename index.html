@@ -12,7 +12,7 @@
 <body>
 
     <nav>
-            <img src="Content/Images/Logoshadow.png" alt="Logo" class="logo" onclick="redirectToPage()">
+            <img src="Content/Images/Logoshadow.png" alt="Logo" class="logo" onclick="scrollToTop()">
             <a href="https://www.youtube.com/@otawanta7456" class="scroll-button"><img src="Content/Images/Youtube.png" width="50vw"></a>
             <a href="https://www.instagram.com/otawanta/" class="scroll-button"><img src="Content/Images/Insta.png" width="50vw"></a>
             <a href="#discography-grid" class="scroll-button">Discography</a>
@@ -100,7 +100,16 @@
                     </video>
                 </div>
             <div class="widget-section"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5pPyKfYrZazFK0mMsWtB8Q?utm_source=generator&theme=0" width="70%" height="800" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-            <div class="image-section bottom-image"><img src="Content/Images/image6.jpeg" alt="About Me Image 1"></div>
+            <div class="image-section bottom-image" style="position: relative; width: 100%; height: 100%; overflow: hidden;">
+                <video id="video3" autoplay muted loop playsinline style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: opacity 1s;" class="visible">
+                    <source src="Content/GIFs/1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video id="video4" autoplay muted loop playsinline style="position: absolute; width: 100%; height: 100%; object-fit: cover; transition: opacity 1s; opacity: 0;" class="hidden">
+                    <source src="Content/GIFs/2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
     </section>
 

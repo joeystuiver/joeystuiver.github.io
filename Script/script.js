@@ -47,8 +47,11 @@ bg1.style.opacity = 1;
 // Change the image every 7 seconds
 setInterval(changeHeaderBackground, 7000);
 
-function redirectToPage() {
-    window.location.href = "index2.html"; // Change this URL to where you want the image to link
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 window.addEventListener('scroll', function() {
@@ -150,49 +153,58 @@ const videoSources = [
     "Content/GIFs/15.mp4"
 ];
 
-  // Get both video elements
-  const video1 = document.getElementById("video1");
-  const video2 = document.getElementById("video2");
+// Get all video elements
+const video1 = document.getElementById("video1");
+const video2 = document.getElementById("video2");
+const video3 = document.getElementById("video3");
+const video4 = document.getElementById("video4");
 
-  // Keep track of the current video index
-  let currentVideoIndex = 0;
+// Keep track of current video indices
+let currentVideoIndex1 = 0;
+let currentVideoIndex2 = 0;
 
-  // Function to pick a random video index
-  function getRandomVideoIndex(excludeIndex) {
-      let randomIndex;
-      do {
-          randomIndex = Math.floor(Math.random() * videoSources.length);
-      } while (randomIndex === excludeIndex); // Ensure it’s not the same as the current video
-      return randomIndex;
-  }
+// Function to pick a random video index
+function getRandomVideoIndex(excludeIndex) {
+    let randomIndex;
+    do {
+        randomIndex = Math.floor(Math.random() * videoSources.length);
+    } while (randomIndex === excludeIndex);
+    return randomIndex;
+}
 
-  // Function to alternate videos with a crossfade
-  function alternateVideo() {
-      // Get the next random video index
-      const nextVideoIndex = getRandomVideoIndex(currentVideoIndex);
-      
-      // Determine which video element is currently visible
-      const currentVideo = currentVideoIndex % 2 === 0 ? video1 : video2;
-      const nextVideo = currentVideoIndex % 2 === 0 ? video2 : video1;
+// Function to handle video alternation
+function handleVideoTransition(currentVideo, nextVideo, currentIndex) {
+    const nextVideoIndex = getRandomVideoIndex(currentIndex);
+    
+    // Update the source of the hidden video element
+    const nextSource = nextVideo.querySelector("source");
+    nextSource.src = videoSources[nextVideoIndex];
+    nextVideo.load();
 
-      // Update the source of the hidden video element
-      const nextSource = nextVideo.querySelector("source");
-      nextSource.src = videoSources[nextVideoIndex];
-      nextVideo.load(); // Preload the next video
+    // Wait for the new video to load and then start crossfade
+    nextVideo.onloadeddata = () => {
+        nextVideo.play();
+        currentVideo.style.opacity = 0;
+        nextVideo.style.opacity = 1;
+    };
 
-      // Wait for the new video to load and then start crossfade
-      nextVideo.onloadeddata = () => {
-          // Start playing the next video
-          nextVideo.play();
+    return nextVideoIndex;
+}
 
-          // Crossfade the videos
-          currentVideo.style.opacity = 0;
-          nextVideo.style.opacity = 1;
+// Function to alternate top videos
+function alternateTopVideo() {
+    const currentVideo = currentVideoIndex1 % 2 === 0 ? video1 : video2;
+    const nextVideo = currentVideoIndex1 % 2 === 0 ? video2 : video1;
+    currentVideoIndex1 = handleVideoTransition(currentVideo, nextVideo, currentVideoIndex1);
+}
 
-          // Update the current video index
-          currentVideoIndex = nextVideoIndex;
-      };
-  }
+// Function to alternate bottom videos
+function alternateBottomVideo() {
+    const currentVideo = currentVideoIndex2 % 2 === 0 ? video3 : video4;
+    const nextVideo = currentVideoIndex2 % 2 === 0 ? video4 : video3;
+    currentVideoIndex2 = handleVideoTransition(currentVideo, nextVideo, currentVideoIndex2);
+}
 
-  // Set interval to alternate videos every 5 seconds (5000 ms)
-  setInterval(alternateVideo, 2500);
+// Set intervals for both video sections
+setInterval(alternateTopVideo, 2500);
+setInterval(alternateBottomVideo, 2500);
